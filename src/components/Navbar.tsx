@@ -56,7 +56,10 @@ const Navbar = () => {
         <Button color="secondary">Daftar</Button>
         <Button color="primary">Masuk</Button>
       </div>
-      <Button color="secondary" onClick={openModalHandler}>
+      <Button
+        color="secondary"
+        className="block md:hidden"
+        onClick={openModalHandler}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
