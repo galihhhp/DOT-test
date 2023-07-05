@@ -1,5 +1,6 @@
-import Button from "../Button";
+import Button from "@/components/Button";
 import Image from "next/image";
+import { PRODUCTS } from "@/lib/constants";
 import React from "react";
 
 type Props = {
@@ -37,25 +38,28 @@ const DisplayDetailsCard = ({ key, inDepthInfo }: Props) => {
         <p className="text-12 2xl:text-16">Studio SAe</p>
       </div>
       {!inDepthInfo && (
-        <div className="grid grid-cols-2 text-14">
+        <div className="grid grid-cols-[35%_1fr] text-14">
           <div className="flex flex-col text-14 2xl:text-16">
             <p>Jenis Rumah</p>
             <p>Tipe Desain</p>
           </div>
           <div className="flex flex-col text-14 2xl:text-16">
             <p>Scandinavian</p>
-            <p className="text-primary">Tipe Desain</p>
+            <div className="flex gap-2 items-center text-primary">
+              <img src="/icons/checklist.svg" alt="" /> Dapat Dimodifikasi
+            </div>
           </div>
         </div>
       )}
       <div className="flex justify-between border-y py-4">
-        {[...Array(4)].map((_, i) => {
+        {PRODUCTS.specification.map((item, i) => {
           return (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col gap-1 items-center">
+              <img src={item.icon} alt="" className="w-6 h-6" />
               <p className="text-10 2xl:text-12 text-medium-grey text-center">
-                Dimensi Tanah
+                {item.title}
               </p>
-              <p className="text-12 2xl:text-16">15 x 8m</p>
+              <p className="text-12 2xl:text-16">{item.desc}</p>
             </div>
           );
         })}
