@@ -20,8 +20,8 @@ const DisplaySimpleCard = ({ key }: Props) => {
         height={0}
       />
       <div className="flex flex-col gap-[8px]">
-        <h1 className="font-bold text-20">Ruang</h1>
-        <p className="text-14">2.0 x 2.9</p>
+        <h1 className="font-bold text-16 2xl:text-20">Ruang</h1>
+        <p className="text-12 2xl:text-14">2.0 x 2.9</p>
       </div>
     </div>
   );
