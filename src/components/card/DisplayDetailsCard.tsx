@@ -72,11 +72,9 @@ const DisplayDetailsCard = ({ key, inDepthInfo }: Props) => {
           Harga konstruksi mulai dari Rp 560.000.000
         </p>
       </div>
-      <Button
-        label={inDepthInfo ? "Lihat Detail" : "Konsultasi Sekarang"}
-        border={inDepthInfo}
-        color="primary"
-      />
+      <Button border={inDepthInfo} color="primary">
+        {inDepthInfo ? "Lihat Detail" : "Konsultasi Sekarang"}
+      </Button>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import Breadcumb from "@/components/Breadcumb";
+import Carousel from "@/components/Carousel";
 import DisplayDetailsCard from "@/components/card/DisplayDetailsCard";
 import DisplaySimpleCard from "@/components/card/DisplaySimpleCard";
 import Footer from "../components/Footer";
@@ -6,10 +8,38 @@ import Navbar from "@/components/Navbar";
 import Testimoni from "@/components/Testimoni";
 
 export default function Home() {
+  const images = [
+    "/home-main.webp",
+    "/home-interior.webp",
+    "/home-main.webp",
+    "/home-interior.webp",
+    "/home-main.webp",
+    "/home-interior.webp",
+  ];
+
+  const breadcumb = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Layanan Desain",
+      link: "/layanan-desain",
+    },
+    {
+      title: "Omah Apik 3",
+      link: "/layanan-desain/omah-apik-3",
+    },
+  ];
+
   return (
     <div>
       <Navbar />
-      <div className="flex md:flex-row flex-col px-[32px] lg:px-[62px] gap-[36px]">
+      <div className="px-[32px] lg:px-[62px] py-6">
+        <Breadcumb items={breadcumb} />
+      </div>
+      <Carousel images={images} />
+      <div className="flex md:flex-row flex-col px-[32px] mt-6 lg:px-[62px] gap-[36px]">
         <div className="w-full md:w-[60%] xl:w-[70%] flex flex-col gap-[16px]">
           <h1 className="font-semibold text-20 2xl:text-24">Tampilan Rumah</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[16px]">
